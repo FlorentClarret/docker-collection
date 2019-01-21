@@ -1,15 +1,15 @@
 version: '3'
 services:
   plex:
-    container_name: plex
     image: plexinc/pms-docker
+    container_name: plex
+    hostname: plex
+    network_mode: host
     restart: unless-stopped
     environment:
       - TZ=Europe/Paris
       - PLEX_UID=1001
       - PLEX_GID=1001
-    hostname: plex-server
-    network_mode: host
     volumes:
       - /home/plex:/config
       - /tmp:/transcode
