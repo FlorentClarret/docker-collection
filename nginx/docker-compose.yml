@@ -2,6 +2,7 @@ version: '2'
 services:
   nginx:
     build: ./
+    image: nginx
     container_name: reverse-proxy
     hostname: reverse-proxy
     restart: always
