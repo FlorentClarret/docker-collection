@@ -1,11 +1,11 @@
-version: '3'
+version: '2'
 services:
   plex:
     image: plexinc/pms-docker
     container_name: plex
     hostname: plex
     network_mode: host
-    restart: unless-stopped
+    restart: always
     environment:
       - TZ=Europe/Paris
       - PLEX_UID=1001
