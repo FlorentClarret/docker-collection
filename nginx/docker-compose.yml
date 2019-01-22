@@ -1,6 +1,6 @@
 version: '2'
 services:
-  plex:
+  nginx:
     build: ./
     container_name: reverse-proxy
     hostname: reverse-proxy
