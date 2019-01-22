@@ -4,5 +4,5 @@ LABEL maintainer="florent.clarret@gmail.com"
 
 RUN rm /etc/nginx/conf.d/default.conf
 
-COPY services.conf /etc/nginx/conf.d/
-COPY nginx.conf /etc/nginx/
+COPY config/services.conf /etc/nginx/conf.d/
+COPY config/nginx.conf /etc/nginx/
