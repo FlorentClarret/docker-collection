@@ -1,0 +1,22 @@
+version: '2'
+services:
+  pihole:
+    image: pihole/pihole:latest
+    container_name: pihole
+    hostname: pihole
+    restart: always
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      - 8080:80
+    cap_add:
+      - NET_ADMIN
+    dns:
+      - 127.0.0.1
+    environment:
+      - ServerIP=127.0.0.1
+      - DNS1=80.67.169.12
+      - DNS2=80.67.169.40
+    volumes:
+      - /home/pihole/pihole:/etc/pihole
+      - /home/pihole/dnsmasq.d:/etc/dnsmasq.d
