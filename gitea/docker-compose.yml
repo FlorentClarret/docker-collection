@@ -1,0 +1,40 @@
+version: "2"
+
+networks:
+  gitea:
+    external: false
+
+services:
+  gitea-server:
+    image: gitea/gitea:latest
+    environment:
+      - USER_UID=1003
+      - USER_GID=1003
+      - DB_TYPE=mysql
+      - DB_HOST=gitea-datadase:3306
+      - DB_NAME=gitea
+      - DB_USER=gitea
+      - DB_PASSWD=gitea
+      - ROOT_URL="/gitea"
+    restart: always
+    networks:
+      - gitea
+    volumes:
+      - /home/gitea/gitea-server:/data
+    ports:
+      - "3000:3000"
+      - "222:22"
+    depends_on:
+      - gitea-datadase
+  gitea-datadase:
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=gitea
+      - MYSQL_USER=gitea
+      - MYSQL_PASSWORD=gitea
+      - MYSQL_DATABASE=gitea
+    networks:
+      - gitea
+    volumes:
+      - /home/gitea/gitea-database:/var/lib/mysql
