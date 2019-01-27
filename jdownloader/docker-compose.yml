@@ -1,0 +1,13 @@
+version: '2'
+services:
+  jdownloader:
+    image: plusminus/jdownloader2-headless:alpine
+    container_name: jdownloader2
+    hostname: jdownloader2
+    restart: always
+    environment:
+      - UID=1000
+      - GID=1000
+    volumes:
+      - /opt/jdownloader2:/opt/JDownloader/cfg
+      - /home/jdownloader:/opt/JDownloader/Downloads
