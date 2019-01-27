@@ -1,0 +1,2 @@
+DEVICESCAN -m <your mail> -M test
+DEVICESCAN -a -o on -S on -H -n standby -m <your mail> -M daily -s (S/../.././01|L/../../1/04) -W 4,35,40

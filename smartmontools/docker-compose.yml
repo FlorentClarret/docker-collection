@@ -1,0 +1,9 @@
+version: '2'
+services:
+  smartmontools:
+    build: ./
+    image: smartmontools
+    container_name: smartmontools
+    hostname: smartmontools
+    restart: always
+    privileged: true
