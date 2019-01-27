@@ -11,7 +11,7 @@ services:
       - USER_UID=1003
       - USER_GID=1003
       - DB_TYPE=mysql
-      - DB_HOST=gitea-datadase:3306
+      - DB_HOST=gitea-database:3306
       - DB_NAME=gitea
       - DB_USER=gitea
       - DB_PASSWD=gitea
