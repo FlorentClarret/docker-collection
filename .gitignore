@@ -1,5 +1,5 @@
-bind/config/albion.zone
+#
 
-smartmontools/config/smartd.conf
-smartmontools/config/msmtprc
 smartmontools/config/aliases
+smartmontools/config/msmtprc
+smartmontools/config/smartd.conf
