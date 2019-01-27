@@ -1,9 +1,0 @@
-version: '2'
-services:
-  bind:
-    build: ./
-    container_name: bind
-    hostname: bind
-    restart: always
-    ports:
-      - 53:53/udp
