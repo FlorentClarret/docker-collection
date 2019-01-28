@@ -1,0 +1,15 @@
+version: '2'
+services:
+  portainer:
+    image: xujinkai/aria2-with-webui
+    container_name: aria2
+    hostname: aria2
+    restart: always
+    ports:
+      - 6800:6800
+      - 6880:80
+    environment:
+      - SECRET=YOUR_SECRET_CODE
+    volumes:
+      - /home/aria2/config/:/conf
+      - /home/aria2/data/:/data
