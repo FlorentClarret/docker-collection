@@ -10,5 +10,7 @@ services:
     environment:
       - EULA=TRUE
       - MOTD=AlbionCraft
+      - UID=1007
+      - GID=1007
     volumes:
       - /home/minecraft/:/data
