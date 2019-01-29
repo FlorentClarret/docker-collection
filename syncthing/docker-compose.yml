@@ -1,0 +1,22 @@
+version: '2'
+services:
+  syncthing:
+    image: linuxserver/syncthing
+    container_name: syncthing
+    hostname: syncthing
+    restart: always
+    ports:
+      - 8384:8384
+      - 22000:22000
+      - 21027:21027/udp
+    environment:
+      - PGID=1008
+      - PUID=1008
+      - UMASK_SET=022
+    volumes:
+      - /home/syncthing:/config
+      - /mnt/raid/syncthing:/mnt/
+
+
+
+
