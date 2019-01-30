@@ -1,0 +1,15 @@
+version: '2'
+services:
+  syncthing:
+    image: resilio/sync
+    container_name: resilio-sync
+    hostname: resilio-sync
+    restart: always
+    ports:
+      - 8888:8888
+      - 55555:55555
+    environment:
+      - PGID=1009
+      - PUID=1009
+    volumes:
+      - /mnt/raid/resilio-sync:/mnt/sync
