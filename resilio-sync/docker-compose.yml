@@ -1,6 +1,6 @@
 version: '2'
 services:
-  syncthing:
+  resilio-sync:
     image: resilio/sync
     container_name: resilio-sync
     hostname: resilio-sync
