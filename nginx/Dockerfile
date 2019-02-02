@@ -2,6 +2,11 @@ FROM nginx:alpine
 
 LABEL maintainer="florent.clarret@gmail.com"
 
+RUN set -xe && \
+    apk add --update --no-cache  \
+    curl \
+    rm -rf /tmp/* /var/tmp/
+
 RUN rm /etc/nginx/conf.d/default.conf
 
 COPY config/services.conf /etc/nginx/conf.d/
