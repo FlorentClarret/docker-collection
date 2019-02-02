@@ -12,11 +12,11 @@ services:
     cap_add:
       - NET_ADMIN
     dns:
-      - 127.0.0.1
+      - ${SERVER_IP}
     environment:
-      - ServerIP=127.0.0.1
-      - DNS1=80.67.169.12
-      - DNS2=80.67.169.40
+      - ServerIP=${SERVER_IP}
+      - DNS1=${DNS1}
+      - DNS2=${DNS2}
     volumes:
-      - /home/pihole/pihole:/etc/pihole
-      - /home/pihole/dnsmasq.d:/etc/dnsmasq.d
+      - ${PIHOLE_FOLDER}:/etc/pihole
+      - ${DNSMASQ_FOLDER}:/etc/dnsmasq.d
