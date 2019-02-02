@@ -9,7 +9,7 @@ services:
       - 8888:8888
       - 55555:55555
     environment:
-      - PGID=1009
-      - PUID=1009
+      - PGID=${PGID}
+      - PUID=${PUID}
     volumes:
-      - /mnt/raid/resilio-sync:/mnt/sync
+      - ${VOLUME}:/mnt/sync
