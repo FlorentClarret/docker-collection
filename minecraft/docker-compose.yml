@@ -9,8 +9,15 @@ services:
       - 25565:25565
     environment:
       - EULA=TRUE
+      - MAX_PLAYERS=5
       - MOTD=${MOTD}
       - UID=${UID}
       - GID=${GID}
+      - DIFFICULTY=${DIFFICULTY}
+      - HARDCORE=${HARDCORE}
+      - ALLOW_NETHER=${ALLOW_NETHER}
+      - VIEW_DISTANCE=${VIEW_DISTANCE}
+      - MODE=${MODE}
+      - ONLINE_MODE=${ONLINE_MODE}
     volumes:
       - ${VOLUME}:/data
