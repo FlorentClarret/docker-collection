@@ -1,4 +1,4 @@
-version: '3.3'
+version: '2'
 services:
   radicale:
     image: tomsquest/docker-radicale
@@ -8,10 +8,6 @@ services:
     read_only: yes
     security_opt:
       - no-new-privileges:true
-    healthcheck:
-      test: curl --fail http://localhost:5232 || exit 1
-      interval: 1m
-      retries: 3
     ports:
       - ${RADICALE_PORT}:5232
     volumes:
