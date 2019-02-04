@@ -1,0 +1,14 @@
+version: '2'
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    ports:
+    - ${JELLYFIN_PORT}:8096
+    network_mode: "host"
+    volumes:
+    - ${CONFIG_FOLDER}:/config
+    - ${DATA_FOLDER}:/media
+    environment:
+    - UID=${UID}
+    - GID=${GID}
+    restart: always
