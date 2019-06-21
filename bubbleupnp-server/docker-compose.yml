@@ -1,0 +1,9 @@
+version: '2'
+services:
+  bubbleupnp-server:
+    build: ./
+    image: bubbleupnp-server
+    container_name: bubbleupnp-server
+    hostname: bubbleupnp-server
+    restart: always
+    network_mode: "host"
