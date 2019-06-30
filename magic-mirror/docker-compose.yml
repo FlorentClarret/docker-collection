@@ -1,0 +1,13 @@
+version: '2'
+services:
+  magicmirror:
+    image: bastilimbach/docker-magicmirror
+    container_name: magicmirror
+    hostname: magicmirror
+    restart: always
+    ports:
+      - ${MAGIC_MIRROR_PORT}:8080
+    volumes:
+      - ${CONFIG_FOLDER}:/opt/magic_mirror/config
+      - ${MODULE_FOLDER}:/opt/magic_mirror/modules
+      - ${STYLE_FOLDER}:/opt/magic_mirror/css
