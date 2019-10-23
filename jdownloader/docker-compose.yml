@@ -5,9 +5,6 @@ services:
     container_name: jdownloader2
     hostname: jdownloader2
     restart: always
-    environment:
-      - UID=1000
-      - GID=1000
     volumes:
-      - /opt/jdownloader2:/opt/JDownloader/cfg
-      - /home/jdownloader:/opt/JDownloader/Downloads
+      - ${CONFIG_FOLDER}:/opt/JDownloader/cfg
+      - ${DOWNLOAD_FOLDER}:/opt/JDownloader/Downloads
