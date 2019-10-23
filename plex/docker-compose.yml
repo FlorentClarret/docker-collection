@@ -17,10 +17,8 @@ services:
       - 32413:32413/udp
       - 32414:32414/udp
     environment:
-      - TZ=Europe/Paris
-      - PLEX_UID=1001
-      - PLEX_GID=1001
+      - TZ=${TIMEZONE}
     volumes:
-      - /home/plex:/config
-      - /tmp:/transcode
-      - /mnt/raid:/data
+      - ${CONFIG_FOLDER}:/config
+      - ${TRANSCODE_FOLDER:/transcode
+      - ${DATA_FOLDER}:/data
