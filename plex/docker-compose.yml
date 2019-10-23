@@ -20,5 +20,5 @@ services:
       - TZ=${TIMEZONE}
     volumes:
       - ${CONFIG_FOLDER}:/config
-      - ${TRANSCODE_FOLDER:/transcode
+      - ${TRANSCODE_FOLDER}:/transcode
       - ${DATA_FOLDER}:/data
