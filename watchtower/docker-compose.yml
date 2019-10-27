@@ -7,7 +7,6 @@ services:
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    command: --schedule "0 0 4 * * *"
     environment:
       - WATCHTOWER_NOTIFICATIONS=email
       - WATCHTOWER_NOTIFICATION_EMAIL_FROM=florent.clarret.lab@gmail.com
@@ -15,3 +14,5 @@ services:
       - WATCHTOWER_NOTIFICATION_EMAIL_SERVER=smtp.gmail.com
       - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_USER=florent.clarret.lab@gmail.com
       - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD=N0tMyPasswOrd
+      - WATCHTOWER_SCHEDULE=0 0 4 * * *
+      - WATCHTOWER_NO_PULL=true
