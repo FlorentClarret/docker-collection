@@ -1,7 +1,7 @@
 version: '2'
 services:
   resilio-sync:
-    image: resilio/sync
+    image: linuxserver/resilio-sync 
     container_name: resilio-sync
     hostname: resilio-sync
     restart: always
