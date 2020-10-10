@@ -1,7 +1,7 @@
 version: '2'
 services:
   jdownloader:
-    image: plusminus/jdownloader2-headless:alpine
+    image: jaymoulin/jdownloader
     container_name: jdownloader2
     hostname: jdownloader2
     restart: always
