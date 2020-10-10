@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+    docker-gc-arm:
+        volumes:
+            - '/var/run/docker.sock:/var/run/docker.sock'
+            - '/etc:/etc'
+        image: eripa/docker-gc-arm
