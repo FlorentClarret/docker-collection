@@ -9,3 +9,4 @@ services:
       - 5000:5000
     volumes:
       - /srv/docker-registry/data:/var/lib/registry
+      - /srv/docker-registry/config/config.yml:/etc/docker/registry/config.yml
