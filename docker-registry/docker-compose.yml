@@ -8,4 +8,4 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - /tmp/docker-registry:/var/lib/registry
+      - /srv/docker-registry/data:/var/lib/registry
