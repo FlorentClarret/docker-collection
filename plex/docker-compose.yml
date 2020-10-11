@@ -17,6 +17,8 @@ services:
       - 32413:32413/udp
       - 32414:32414/udp
     environment:
+      - PUID=1000
+      - PGID=1000
       - TZ=${TIMEZONE}
     volumes:
       - ${CONFIG_FOLDER}:/config
