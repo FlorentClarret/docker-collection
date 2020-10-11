@@ -12,4 +12,7 @@ services:
       - PGID=${PGID}
       - PUID=${PUID}
     volumes:
-      - ${VOLUME}:/mnt/sync
+      - ${VOLUME}/sync:/sync
+      - ${VOLUME}/downloads:/downloads
+      - ${VOLUME}/config:/config
+
