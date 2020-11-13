@@ -1,0 +1,46 @@
+version: "3.8"
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    hostname: grafana
+    restart: always
+    user: "${UID}:${GID}"
+    ports:
+      - ${GRAFANA_PORT}:3000
+    networks:
+      - monitoring
+    volumes:
+      - ${GRAFANA_FOLDER}:/var/lib/grafana
+  influxdb:
+    image: influxdb
+    container_name: influxdb
+    hostname: influxdb
+    restart: always
+    user: "${UID}:${GID}"
+    ports:
+      - ${INFLUXDB_PORT}:8086
+    networks:
+      - monitoring
+    volumes:
+      - ${INFLUXDB_FOLDER}:/var/lib/influxdb
+  telegraf:
+    image: telegraf
+    container_name: telegraf
+    hostname: ${TELEGRAF_HOSTNAME:-toto}
+    restart: always
+    environment:
+      - HOST_ETC=/hostfs/etc
+      - HOST_PROC=/hostfs/proc
+      - HOST_SYS=/hostfs/sys
+      - HOST_VAR=/hostfs/var
+      - HOST_RUN=/hostfs/run
+      - HOST_MOUNT_PREFIX=/hostfs
+    networks:
+      - monitoring
+    volumes:
+      - /:/hostfs:ro
+      - ${TELEGRAF_FOLDER}:/etc/telegraf
+
+networks:
+  monitoring:
