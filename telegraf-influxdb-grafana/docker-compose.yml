@@ -40,6 +40,7 @@ services:
       - monitoring
     volumes:
       - /:/hostfs:ro
+      - /var/run/docker.sock:/var/run/docker.sock
       - ${TELEGRAF_FOLDER}:/etc/telegraf
 
 networks:
