@@ -36,8 +36,7 @@ services:
       - HOST_VAR=/hostfs/var
       - HOST_RUN=/hostfs/run
       - HOST_MOUNT_PREFIX=/hostfs
-    networks:
-      - monitoring
+    network_mode: host
     volumes:
       - /:/hostfs:ro
       - /var/run/docker.sock:/var/run/docker.sock
