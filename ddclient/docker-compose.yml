@@ -1,5 +1,5 @@
 ---
-version: "2.1"
+version: "3.3"
 services:
   ddclient:
     image: linuxserver/ddclient
@@ -10,5 +10,5 @@ services:
       - PGID=1000
       - TZ=Europe/Paris
     volumes:
-      - $CONFIG_PATH:/config
+      - ${CONFIG_PATH}:/config
     restart: unless-stopped
