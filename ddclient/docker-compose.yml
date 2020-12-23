@@ -10,5 +10,5 @@ services:
       - PGID=1000
       - TZ=Europe/Paris
     volumes:
-      - $CONFIF_PATH:/config
+      - $CONFIG_PATH:/config
     restart: unless-stopped
