@@ -1,0 +1,14 @@
+---
+version: "2.1"
+services:
+  ddclient:
+    image: linuxserver/ddclient
+    hostname: ddclient
+    container_name: ddclient
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+    volumes:
+      - $CONFIF_PATH:/config
+    restart: unless-stopped
