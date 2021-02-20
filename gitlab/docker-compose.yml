@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+  gitlab:
+    image: 'gitlab/gitlab-ce:latest'
+    container_name: gitlab
+    restart: always
+    hostname: 'gitlab'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+          external_url 'http://10.0.2.1:40080'
+          gitlab_rails['gitlab_shell_ssh_port'] = 40022
+    ports:
+      - '40080:40080'
+      - '40443:443'
+      - '40022:22'
+    volumes:
+      - '$GITLAB_HOME/config:/etc/gitlab'
+      - '$GITLAB_HOME/logs:/var/log/gitlab'
+      - '$GITLAB_HOME/data:/var/opt/gitlab'
