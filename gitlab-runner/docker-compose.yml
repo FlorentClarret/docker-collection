@@ -1,0 +1,11 @@
+version: '3.5'
+services:
+  gitlab-runner:
+    image: gitlab/gitlab-runner:alpine
+    hostname: gitlab-runner
+    container_name: gitlab-runner
+    restart: unless-stopped
+    volumes:
+      - $GITLAB_RUNNER_HOME:/etc/gitlab-runner
+      - /var/run/docker.sock:/var/run/docker.sock
+    network_mode: host
