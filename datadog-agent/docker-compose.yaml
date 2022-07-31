@@ -1,0 +1,15 @@
+---
+version: "3.3"
+services:
+  datadog-agent:
+    image: gcr.io/datadoghq/agent:7
+    hostname: datadog-agent
+    container_name: datadog-agent
+    environment:
+      - DD_SITE="datadoghq.eu"
+      - DD_API_KEY=${API_KEY}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /proc/:/host/proc/:ro
+      - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
+    restart: unless-stopped
