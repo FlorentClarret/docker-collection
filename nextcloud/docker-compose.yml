@@ -1,10 +1,10 @@
-version: '2'
+version: '3'
 
 services:
   nextcloud-database:
     image: mariadb
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
-    restart: always
+    restart: unless-stopped
     container_name: nextcloud-database
     hostname: nextcloud-database
     volumes:
@@ -25,6 +25,6 @@ services:
       - ${NEXTCLOUD_PORT}:80
     volumes:
       - ${NEXTCLOUD_VOLUME}:/var/www/html
-    restart: always
+    restart: unless-stopped
     depends_on:
       - nextcloud-database
