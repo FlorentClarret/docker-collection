@@ -2,6 +2,7 @@ FROM nginx:alpine
 
 LABEL maintainer="florent.clarret@gmail.com"
 
+# hadolint ignore=DL3018
 RUN set -xe && \
     apk add --update --no-cache  \
     curl \

@@ -29,6 +29,11 @@ repos:
     hooks:
       - id: docker-compose-check
 
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.12.0
+    hooks:
+      - id: hadolint-docker
+
   - repo: https://github.com/homebysix/pre-commit-macadmin
     rev:
       v1.12.3
