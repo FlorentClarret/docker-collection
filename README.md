@@ -9,5 +9,5 @@ This project contains my collection of docker files and docker compose files for
 
 [mergify-website]: https://mergify.com
 [mergify-badge]: https://img.shields.io/endpoint.svg?url=https://api.mergify.com/v1/badges/FlorentClarret/docker-collection&style=flat
-[pre-commit-badge]: https://results.pre-commit.ci/badge/github/FlorentClarret/docker-collection/main.svg
-[pre-commit-result]: https://results.pre-commit.ci/latest/github/FlorentClarret/docker-collection/main
+[pre-commit-badge]: https://results.pre-commit.ci/badge/github/FlorentClarret/docker-collection/master.svg
+[pre-commit-result]: https://results.pre-commit.ci/latest/github/FlorentClarret/docker-collection/master
