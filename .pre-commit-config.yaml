@@ -1,7 +1,7 @@
 ---
 
 ci:
-    skip: [check-git-config-email]
+    skip: [check-git-config-email, docker-compose-check, hadolint-docker]
 
 repos:
   - repo: https://github.com/zricethezav/gitleaks
