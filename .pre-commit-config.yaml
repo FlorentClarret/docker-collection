@@ -1,7 +1,7 @@
 ---
 
 ci:
-    skip: [check-git-config-email, docker-compose-check, hadolint-docker]
+    skip: [docker-compose-check, hadolint-docker]
 
 repos:
   - repo: https://github.com/zricethezav/gitleaks
@@ -33,12 +33,3 @@ repos:
     rev: v2.12.0
     hooks:
       - id: hadolint-docker
-
-  - repo: https://github.com/homebysix/pre-commit-macadmin
-    rev:
-      v1.12.3
-    hooks:
-      - id: check-git-config-email
-        args:
-          - --domains
-          - gmail.com
