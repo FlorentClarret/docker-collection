@@ -16,7 +16,3 @@ services:
     volumes:
       - /home/syncthing:/config
       - /mnt/raid/syncthing:/mnt/
-
-
-
-

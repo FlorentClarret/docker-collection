@@ -1,7 +1,7 @@
 version: '2'
 services:
   resilio-sync:
-    image: linuxserver/resilio-sync 
+    image: linuxserver/resilio-sync
     container_name: resilio-sync
     hostname: resilio-sync
     restart: always
@@ -15,4 +15,3 @@ services:
       - ${VOLUME}/sync:/sync
       - ${VOLUME}/downloads:/downloads
       - ${VOLUME}/config:/config
-
