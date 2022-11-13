@@ -24,6 +24,11 @@ repos:
       - id: detect-private-key
       # - id: forbid-submodules in the next version
 
+  - repo: https://github.com/IamTheFij/docker-pre-commit
+    rev: v2.1.1
+    hooks:
+      - id: docker-compose-check
+
   - repo: https://github.com/homebysix/pre-commit-macadmin
     rev:
       v1.12.3
