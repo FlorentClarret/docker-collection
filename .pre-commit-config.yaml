@@ -5,7 +5,7 @@ ci:
 
 repos:
   - repo: https://github.com/zricethezav/gitleaks
-    rev: v8.16.2
+    rev: v8.16.3
     hooks:
       - id: gitleaks
         args: ["detect", "--redact", "--verbose"]
@@ -25,7 +25,7 @@ repos:
       # - id: forbid-submodules in the next version
 
   - repo: https://github.com/IamTheFij/docker-pre-commit
-    rev: v2.1.1
+    rev: v3.0.1
     hooks:
       - id: docker-compose-check
 
