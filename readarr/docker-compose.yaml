@@ -1,0 +1,17 @@
+---
+version: "2.1"
+services:
+  readarr:
+    image: lscr.io/linuxserver/readarr:develop
+    container_name: readarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+    volumes:
+      - $VOLUME_CONFIG:/config
+      - $VOLUME_BOOKS:/books
+      - $VOLUME_DOWNLOAD:/downloads
+    ports:
+      - 8787:8787
+    restart: unless-stopped
