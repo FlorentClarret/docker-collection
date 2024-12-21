@@ -1,18 +1,25 @@
-version: '2'
+---
+version: "3"
 services:
   syncthing:
-    image: linuxserver/syncthing
+    image: syncthing/syncthing
     container_name: syncthing
-    hostname: syncthing
-    restart: always
-    ports:
-      - 8384:8384
-      - 22000:22000
-      - 21027:21027/udp
+    hostname: my-syncthing
     environment:
-      - PGID=1008
-      - PUID=1008
-      - UMASK_SET=022
+      - PUID=$PUID
+      - PGID=$PGID
+      - STHOMEDIR=/etc/config
     volumes:
-      - /home/syncthing:/config
-      - /mnt/raid/syncthing:/mnt/
+      - $MOUNT_PATH:/var/syncthing
+      - $CONFIG_PATH:/etc/config
+    ports:
+      - 8384:8384 # Web UI
+      - 22000:22000/tcp # TCP file transfers
+      - 22000:22000/udp # QUIC file transfers
+      - 21027:21027/udp # Receive local discovery broadcasts
+    restart: unless-stopped
+    healthcheck:
+      test: curl -fkLsS -m 2 127.0.0.1:8384/rest/noauth/health | grep -o --color=never OK || exit 1
+      interval: 1m
+      timeout: 10s
+      retries: 3
